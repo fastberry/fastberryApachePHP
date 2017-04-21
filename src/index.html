@@ -1,0 +1,33 @@
+<html>
+ <head>
+  <title>fastberry/apachephp index.html</title>
+ </head>
+ <body>
+   <h1>fastberry/apachephp Container</h1>
+   Congratulations!  If you see this message the apache server is successfully
+   running in the fastberry/appachephp container.
+   
+   <p>
+
+     In order to see your own web content do this:
+     <P>
+
+     Stop the docker container - go to a terminal window and type:
+     <pre>
+       docker -kill apachephp
+       </pre>
+
+     Create a directory and put your files there. Then run the docker container again using these commands, giving the name of your directory instead of "/home/pi/yourdirectory":
+
+     <pre>
+     docker rm apachephp
+     docker run --name apachephp -it -p 80:80 -v /home/pi/yourdirectory:/var/www/html fastberry/apachephp
+     </pre>
+
+     You can update your web content by editing your files in the web content directory, or copying files from another location.
+
+<p>
+       
+   <a href="index.php">Click this link to test the php configuration.</a>
+ </body>
+</html>
