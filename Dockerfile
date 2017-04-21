@@ -11,20 +11,8 @@ RUN apt-get -y install \
     apache2-doc \
     apache2-utils \
     debconf-utils \
-    php5 \
-    libapache2-mod-php5
-
-# install mysql
-#RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-#    php5-mysql \
-#    mysql-server \
-#    mysql-client
-
-# set DEBIAN_FRONTEND to supress prompt for root password and install mysql-server
-#RUN export DEBIAN_FRONTEND=noninteractive && apt-get -q -y install mysql-server
-
-# now set the mysql root password
-#RUN mysqladmin -u root password fastberry
+    libapache2-mod-php5 \
+    php5
 
 # pre-populate the html directory
 COPY src/index.html /var/www/html/
